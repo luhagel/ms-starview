@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var ratingLabel: UILabel!
+    
     var myStarView: StarView!
 
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
             let location = touch.location(in: self.myStarView)
             print(location)
             self.myStarView.fillStars(num: Int(location.x))
+            self.ratingLabel.text = String(self.myStarView.filledStars) + " Stars"
         }
     }
 }
